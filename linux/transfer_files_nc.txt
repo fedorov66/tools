@@ -1,0 +1,5 @@
+# target
+nc -l 5656 | tar x
+
+# source
+tar c * | nc x.x.x.x 5656

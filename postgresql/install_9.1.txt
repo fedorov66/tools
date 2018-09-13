@@ -1,0 +1,7 @@
+# Установка postgresql 9.1 на Ubuntu 18
+# Нужно ПРЕДВАРИТЕЛЬНО установить клиент.
+wget http://ftp.br.debian.org/debian/pool/main/p/postgresql-9.1/postgresql-client-9.1_9.1.21-0+deb7u1_amd64.deb
+sudo dpkg -i postgresql-client-9.1_9.1.21-0+deb7u1_amd64.deb
+
+wget http://ftp.br.debian.org/debian/pool/main/p/postgresql-9.1/postgresql-9.1_9.1.21-0+deb7u1_amd64.deb
+sudo dpkg -i postgresql-9.1_9.1.21-0+deb7u1_amd64.deb

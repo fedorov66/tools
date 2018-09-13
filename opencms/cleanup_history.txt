@@ -1,0 +1,29 @@
+
+1. Connect to postgresql
+sudo -u postgres psql
+
+2. Select database
+postgres=# \c DATABASE_NAME
+You are now connected to database "DATABASE_NAME" as user "postgres".
+DATABASE_NAME=#
+
+3. Run command
+DELETE from cms_history_resources where (resource_id, resource_version) NOT IN (
+ SELECT resource_id, max(resource_version) from cms_history_resources GROUP BY resource_id);
+
+4. Run command
+DELETE
+FROM    cms_history_resources
+WHERE
+  resource_id NOT IN (SELECT resource_id FROM cms_offline_resources) AND
+  resource_id NOT IN (SELECT resource_id FROM cms_online_resources);
+
+5. Run command
+DELETE FROM cms_contents
+WHERE
+  resource_id NOT IN (SELECT resource_id FROM cms_history_resources ) AND
+  resource_id NOT IN (SELECT resource_id FROM cms_offline_resources) AND
+  resource_id NOT IN (SELECT resource_id FROM cms_online_resources);
+
+6. Run command
+vacuum full verbose analyze;

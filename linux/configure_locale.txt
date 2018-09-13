@@ -1,0 +1,14 @@
+# LOCALE/TIMEZONE
+
+
+# список локальей
+locale -a
+
+# добавление английской локали
+sudo locale-gen en_US.UTF-8
+
+# установка локали по умолчаниею
+sudo dpkg-reconfigure locales
+
+# установка timezone Moscow
+sudo timedatectl set-timezone Europe/Moscow

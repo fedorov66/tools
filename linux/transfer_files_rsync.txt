@@ -1,0 +1,3 @@
+rsync -av IP_REMOTE:/path/to/source /path/to/target
+# OR
+rsync -av /path/to/source IP_REMOTE:/path/to/target

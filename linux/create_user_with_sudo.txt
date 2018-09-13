@@ -1,0 +1,5 @@
+
+#1# change USERNAME
+#2# change __PUBLIC_KEY__ to ssh-rsa public key
+
+useradd -m -s /bin/bash USERNAME && usermod -aG sudo USERNAME && mkdir /home/USERNAME/.ssh ; touch /home/USERNAME/.ssh/authorized_keys; chown USERNAME:USERNAME /home/USERNAME/.ssh/authorized_keys ; chmod 600 /home/USERNAME/.ssh/authorized_keys ;echo "__PUBLIC_KEY__" >> /home/USERNAME/.ssh/authorized_keys;
